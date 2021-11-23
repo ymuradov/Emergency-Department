@@ -19,19 +19,18 @@ import java.util.List;
 @Setter
 public class Examination extends Base {
 
-    @ManyToOne( cascade = CascadeType.ALL)
-    private Ticket ticket;
-
     private String preliminaryDiagnosis;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Analyses.class)
     @CollectionTable(name = "examination_analyses")
     private List<Analyses> analyses;
+
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Treatment.class)
     @CollectionTable(name = "examination_treatment")
     private List<Treatment> treatment;
+
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = RadioDiagnostics.class)
     @CollectionTable(name = "examination_radiodiagnosis")

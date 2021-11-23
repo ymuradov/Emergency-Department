@@ -1,6 +1,7 @@
 package com.bsmp.emergency_room.domain.entity;
 
 import com.bsmp.emergency_room.domain.enums.Symptom;
+import com.bsmp.emergency_room.domain.enums.Treatment;
 import lombok.*;
 
 
@@ -19,8 +20,9 @@ public class Ticket extends Base{
     @ManyToOne
     private Patient patient;
 
-    @ManyToOne
-    private Doctor doctor;
+    @ManyToMany
+    @CollectionTable
+    private List<Doctor> doctors;
 
     @Enumerated
     @ElementCollection(targetClass = Symptom.class)
@@ -30,6 +32,6 @@ public class Ticket extends Base{
     private boolean isHandled;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "examination_id")
-    private List<Examination> examinationOfTicket;
+    @CollectionTable
+    private List<Examination> examinationsOfTicket;
 }

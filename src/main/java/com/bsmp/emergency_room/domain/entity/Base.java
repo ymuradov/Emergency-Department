@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Entity
+
 @Getter
 @Setter
 @MappedSuperclass
@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Base {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @CreatedDate

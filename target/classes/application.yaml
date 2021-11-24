@@ -1,0 +1,16 @@
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://bsmp.cbl3moaxpzys.us-east-1.rds.amazonaws.com:5432/surgery
+    username: postgres
+    password: postgres
+server:
+  port: 8099
+

@@ -25,4 +25,5 @@ public class Patient extends Base{
     @Column(unique = true)
     private String email;
 
+
 }

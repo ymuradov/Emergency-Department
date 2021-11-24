@@ -1,4 +1,5 @@
-package com.bsmp.emergency_room.domain.DTO;
+package com.bsmp.emergency_room.domain.RequestDTO;
+
 
 import com.bsmp.emergency_room.domain.enums.Symptom;
 import lombok.*;
@@ -10,8 +11,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class TicketDTO {
-    private PatientDTO patientDTO;
-    private DoctorDTO doctorDTO;
+public class RequestTicketDTO {
+
+    private RequestPatientDTO patientDTO;
+    private RequestDoctorDTO requestDoctorDTO;
     private List<Symptom> symptoms;
 }

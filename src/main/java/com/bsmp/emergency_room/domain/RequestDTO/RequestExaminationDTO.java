@@ -1,5 +1,7 @@
-package com.bsmp.emergency_room.domain.DTO;
+package com.bsmp.emergency_room.domain.RequestDTO;
 
+import com.bsmp.emergency_room.domain.ResponceDTO.ResponseDoctorDTO;
+import com.bsmp.emergency_room.domain.ResponceDTO.ResponsePatientDTO;
 import com.bsmp.emergency_room.domain.enums.Analyses;
 import com.bsmp.emergency_room.domain.enums.RadioDiagnostics;
 import com.bsmp.emergency_room.domain.enums.Treatment;
@@ -13,10 +15,10 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExaminationDTO {
+public class RequestExaminationDTO {
 
-    private PatientDTO patientDTO;
-    private DoctorDTO doctorDTO;
+    private ResponsePatientDTO patientDTO;
+    private ResponseDoctorDTO doctorDTO;
     @NotBlank
     private String preliminaryDiagnosis;
     private List<Analyses> analyses;

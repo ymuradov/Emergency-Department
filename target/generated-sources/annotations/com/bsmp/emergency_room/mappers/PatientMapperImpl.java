@@ -1,12 +1,13 @@
 package com.bsmp.emergency_room.mappers;
 
+import com.bsmp.emergency_room.domain.RequestDTO.RequestPatientDTO;
 import com.bsmp.emergency_room.domain.ResponceDTO.ResponsePatientDTO;
 import com.bsmp.emergency_room.domain.entity.Patient;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-24T23:48:39+0300",
+    date = "2021-11-25T09:16:20+0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.12 (Amazon.com Inc.)"
 )
 public class PatientMapperImpl implements PatientMapper {
@@ -17,28 +18,27 @@ public class PatientMapperImpl implements PatientMapper {
             return null;
         }
 
-        ResponsePatientDTO patientDTO = new ResponsePatientDTO();
+        ResponsePatientDTO responsePatientDTO = new ResponsePatientDTO();
 
-        patientDTO.setId( patient.getId() );
-        patientDTO.setFirstName( patient.getFirstName() );
-        patientDTO.setLastName( patient.getLastName() );
-        patientDTO.setBirthDay( patient.getBirthDay() );
-        patientDTO.setSex( patient.getSex() );
-        patientDTO.setMedicalInsuranceNumber( patient.getMedicalInsuranceNumber() );
-        patientDTO.setEmail( patient.getEmail() );
+        responsePatientDTO.setId( patient.getId() );
+        responsePatientDTO.setFirstName( patient.getFirstName() );
+        responsePatientDTO.setLastName( patient.getLastName() );
+        responsePatientDTO.setBirthDay( patient.getBirthDay() );
+        responsePatientDTO.setSex( patient.getSex() );
+        responsePatientDTO.setMedicalInsuranceNumber( patient.getMedicalInsuranceNumber() );
+        responsePatientDTO.setEmail( patient.getEmail() );
 
-        return patientDTO;
+        return responsePatientDTO;
     }
 
     @Override
-    public Patient fromRequestDTO_ToEntity(ResponsePatientDTO patientDTO) {
+    public Patient fromRequestDTO_ToEntity(RequestPatientDTO patientDTO) {
         if ( patientDTO == null ) {
             return null;
         }
 
         Patient patient = new Patient();
 
-        patient.setId( patientDTO.getId() );
         patient.setFirstName( patientDTO.getFirstName() );
         patient.setLastName( patientDTO.getLastName() );
         patient.setBirthDay( patientDTO.getBirthDay() );
